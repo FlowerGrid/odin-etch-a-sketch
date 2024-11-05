@@ -1,0 +1,86 @@
+html, body {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1rem;
+    background-color: #ebe6e0;
+}
+
+.header, .footer {
+    color: #ebe6e0;
+    background-color: #4c7766;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    height: 7rem;
+}
+
+.footer {
+    height: 3rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.mainframe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    flex: 1;
+    width: 80%;
+
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 6rem;
+}
+
+.btn {
+    height: 4rem;
+    width: 18rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5rem;
+    background-color: #1a4862;
+    color: #ebe6e0;
+    border: 2px solid black;
+    border-radius: 12px;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 480px;
+    height: 480px;
+    background-image: url('static/etch.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 4px solid #1a4862;
+    border-radius: 16px;
+}
+
+.square {
+    /* width: 45px;
+    height: 45px; */
+    box-sizing: border-box;
+    
+}
