@@ -45,29 +45,44 @@ function buildGrid(gridWidth) {
 
 shakeButton.addEventListener('click', () => {
     let squares = document.querySelectorAll('.square');
-    for (sq of squares) {
+    for (let sq of squares) {
         sq.style.backgroundColor = 'rgba(0, 0, 0, 0)';
     }
 });
 
 gridSizeButton.addEventListener('click', () => {
-    squares = document.querySelectorAll('.square');
-    for (square of squares) {
-        gridElement.removeChild(square)
+    let newGridWidth = promptUser();
+    if (newGridWidth) {
+        console.log(newGridWidth)
+        let squares = document.querySelectorAll('.square');
+        for (let square of squares) {
+            gridElement.removeChild(square);
+        }
+        buildGrid(newGridWidth);
     }
-
-    let newGridWidth;
-    do {
-        newGridWidth = prompt("Please choose an integer between 2 and 100 inclusive");
-        newGridWidth = Number(newGridWidth);
-    }
-    while (isNaN(newGridWidth) || newGridWidth < 2 || newGridWidth > 100 ||
-        newGridWidth * 10 % 10 !== 0);
-
-    
-    buildGrid(newGridWidth);
 
 });
+
+function promptUser() {
+    let userInput;
+
+    while (true) {
+        userInput = prompt('Please provide new grid dimentsion. Pick a number between 2 and 100.');
+
+        if (!userInput) {
+            return null;
+        }
+
+        userInput = Number(userInput);
+
+        if (!isNaN(userInput) && userInput >= 2 && userInput <= 100 && Number.isInteger(userInput)) {
+            return userInput;
+           }
+        
+        alert('Invalid input. Please enter an integer between 2 and 100.')
+
+    }
+}
 
 
 btnContainerElement.addEventListener('mouseover', buttonMouseOver);
