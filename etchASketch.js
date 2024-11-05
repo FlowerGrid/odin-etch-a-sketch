@@ -1,5 +1,6 @@
 const contentElement = document.querySelector('.content');
 const gridElement = document.querySelector('.grid');
+const btnContainerElement = document.querySelector('.btn-container')
 const shakeButton = document.querySelector('#shake');
 const gridSizeButton = document.querySelector('#grid-size');
 const gridStyle = window.getComputedStyle(gridElement);
@@ -67,3 +68,37 @@ gridSizeButton.addEventListener('click', () => {
     buildGrid(newGridWidth);
 
 });
+
+
+btnContainerElement.addEventListener('mouseover', buttonMouseOver);
+btnContainerElement.addEventListener('mouseout', buttonMouseOut);
+
+function buttonMouseOver(event) {
+    let target = event.target;
+
+    switch (target.getAttribute('id')) {
+        case 'shake':
+            shakeButton.style.backgroundColor = '#d7dfa3';
+            shakeButton.style.color = '#1a4862';
+            break;
+        case 'grid-size':
+            gridSizeButton.style.backgroundColor = '#d7dfa3';
+            gridSizeButton.style.color = '#1a4862';
+            break;
+    }
+}
+
+function buttonMouseOut(event) {
+    let target = event.target;
+
+    switch (target.getAttribute('id')) {
+        case 'shake':
+            shakeButton.style.backgroundColor = '#1a4862';
+            shakeButton.style.color = '#ebe6e0';
+            break;
+        case 'grid-size':
+            gridSizeButton.style.backgroundColor = '#1a4862';
+            gridSizeButton.style.color = '#ebe6e0';
+            break;
+    }
+}

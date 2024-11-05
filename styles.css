@@ -70,7 +70,7 @@ html, body {
     flex-wrap: wrap;
     width: 480px;
     height: 480px;
-    background-image: url('static/etch.png');
+    background-image: url('static/etch-lite.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
